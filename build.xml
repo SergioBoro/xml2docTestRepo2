@@ -1,0 +1,135 @@
+<!DOCTYPE project>
+<project name="XML2Document" default="jar">
+	<!-- 
+	ВНИМАНИЕ! Чтобы данный скрипт заработал:
+	1) Пропишите в системной переменной JAVA_HOME путь к установленному в системе JDK
+	2) Скопируйте файл build.properties.template в build.properties и пропишите в нём 
+	путь к установленному у вас Tomcat
+	3) Задачи (цели, задания, пути) начинающиеся на "ci." не использовать. Они необходимы и используются для continious integration 
+	на Jenkins.  
+	-->
+
+	<property file="build.properties" />
+	<property environment="os" />
+	
+	<path id="libraries">
+		<fileset dir="lib" includes="*.jar" />
+	</path>
+
+	<path id="ci.libraries">
+		<fileset dir="lib" includes="*.jar" />
+	</path>
+		
+	<target name="clean">
+		<echo>Cleaning the build and destination directories</echo>
+		<delete dir="dest" />		
+		<delete dir="build" />
+	</target>
+
+	<target name="init" depends="clean">
+		<echo>Creating the required directories</echo>
+		<mkdir dir="dest" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build" />
+		<mkdir dir="build/classes" />
+		<mkdir dir="build/filesForTesting" />
+	</target>
+	
+	<target name="ci.init" depends="clean">
+		<echo>Creating the required directories</echo>
+		<mkdir dir="dest" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build" />
+		<mkdir dir="build/classes" />
+		<mkdir dir="build/filesForTesting" />
+	</target>
+
+	<target name="compile" depends="init">
+		<echo>Compile the source files</echo>
+		<javac  destdir="build/classes" encoding="UTF-8">
+			<src>
+			  <pathelement path = "src"/>
+			</src>
+			<classpath refid="libraries" />
+			<exclude name="ru/curs/xml2document/test/*.*"/>
+		</javac>
+	</target>
+
+	<target name="ci.compile" depends="ci.init">
+		<echo>Compile the source files</echo>
+		<javac  destdir="build/classes" encoding="UTF-8">
+			<src>
+			  <pathelement path = "src"/>
+			</src>
+			<classpath refid="ci.libraries" />
+			<exclude name="ru/curs/xml2document/test/*.*"/>
+ 		</javac>
+	</target>	
+	
+	<target name="copy">
+		<copy verbose="true" file="src\versioninfo" tofile="build/classes/versioninfo" />
+		<copy verbose="true" file="src\XML2DocumentManual.docx" tofile="dest/XML2DocumentManual.docx" />
+		<copy verbose="true" file="filesForTesting\dataXML.xml" tofile="build/filesForTesting/dataXML.xml" />
+		<copy verbose="true" file="filesForTesting\descriptorXML.xml" tofile="build/filesForTesting/descriptorXML.xml" />
+		<copy verbose="true" file="filesForTesting\template.docx" tofile="build/filesForTesting/template.docx" />
+		<copy verbose="true" file="filesForTesting\result.docx" tofile="build/filesForTesting/result.docx" />
+		<copy verbose="true" file="lib\poi-3.13-20150929.jar" 
+			tofile="build/libs/poi-3.13-20150929.jar" />
+		<copy verbose="true" file="lib\poi-ooxml-3.13-20150929.jar" 
+			tofile="build/libs/poi-ooxml-3.13-20150929.jar" />
+		<copy verbose="true" file="lib\poi-ooxml-schemas-3.13-20150929.jar" 
+			tofile="build/libs/poi-ooxml-schemas-3.13-20150929.jar" />
+		<copy verbose="true" file="lib\poi-scratchpad-3.13-20150929.jar" 
+			tofile="build/libs/poi-scratchpad-3.13-20150929.jar" />
+		<copy verbose="true" file="lib\xmlbeans-2.6.0.jar" 
+			tofile="build/libs/xmlbeans-2.6.0.jar" />
+		<copy verbose="true" file="lib\ooxml-schemas-1.0.jar" 
+					tofile="build/libs/ooxml-schemas-1.0.jar" />
+	</target>
+
+	<target name="libsZip" depends="copy">
+		<echo>Archiving libs</echo>
+		<zip destfile="dest/ExternalLibraries.zip" basedir="build/libs" />
+	</target>
+	
+	<target name="zip" depends="copy">
+		<echo>Archiving artifacts</echo>
+		<zip destfile="dest/examples.zip" basedir="build/filesForTesting" />
+	</target>
+	
+	<target name="ci.zip" depends="copy">
+		<echo>Archiving artifacts</echo>
+		<zip destfile="dest/${examples.zip.file}_build${os.BUILD_NUMBER}.zip" basedir="build/filesForTesting" />
+	</target>
+	
+	<target name="jar" depends="compile, copy, zip, libsZip">
+		<echo>Building the jar file</echo>
+		<jar destfile="dest/xml2document.jar" basedir="build/classes" />
+	</target>
+		
+	<target name="ci.jar" depends="ci.compile, copy,  ci.write.app.version, ci.zip, libsZip" >
+		<echo>Building the jar file</echo>
+		<jar destfile="dest/${xml2document.jar.file}_build${os.BUILD_NUMBER}.jar" basedir="build/classes" />
+	</target>	
+	
+	<target name="ci.write.app.version" depends="ci.svn.info" description="Write current app version to file">
+		<echo>Reading major version from src/version.properties</echo>
+		<property prefix="xml2document.major." file="src/version.properties"  />
+
+		<property name="xml2document.version" value="${xml2document.major.version}.${xml2document.last.rev}" />
+		<echo>Xml2document version ${xml2document.version}</echo>
+	
+		<property name="xml2document.jar.file" value="xml2document-${xml2document.version}" />
+		<echo>Updating build number file</echo>
+		<echo file="build/classes/versioninfo" message="${xml2document.version}_build${os.BUILD_NUMBER}" />
+		
+		<property name="examples.zip.file" value="examples-${xml2document.version}" />
+	</target>	
+	
+	<target name="ci.svn.info" description="Read svn revision">
+		<property name="xml2document.last.rev" value="${os.SVN_REVISION}"/>		
+		<echo>Last revision of code is ${xml2document.last.rev}</echo>
+	</target>	
+	
+
+</project>
