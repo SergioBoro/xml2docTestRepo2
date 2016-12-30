@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element name="root">
+	<output templateId="2"/>
+	<output templateId="2"/>
+  <iteration>
+        <element name="(before)">
+           <output templateId="5"/>
+         </element>
+  </iteration>
+  <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="3"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="property">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="prop">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+    <iteration>
+        <element name="*">
+            <output templateId="2"/>
+            <output templateId="2"/>            
+            <output templateId="1"/>            
+            <output templateId="5"/>
+            <output templateId="6"/>
+            <output templateId="6"/> 
+        </element>
+    </iteration>
+</element>
+ 
